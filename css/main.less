@@ -1,0 +1,890 @@
+// Import bootstrap 
+@import "../js/assets/bootstrap/less/bootstrap.less";
+
+// Import font awesome, we only use font awesome and doesn't use bootstrap glyph
+@import "font-awesome.css";
+
+// Import plugin css
+@import "jPushMenu.less"; // change css to less for enabling mixins & variables usage
+
+// ===== Primary Styles ===========================================================================
+// Author: Akbar Khrisna (Pinest Design - http://twitter.com/pinestdesign - pinestdesign@gmail.com)
+// 13 September 2014
+// Info: Main styling for HSBDG Site.
+// Note: All styling by default is for MOBILE, then we gradually style it for bigger devices
+//		 on responsive.hs.less
+// ================================================================================================
+
+// anchor settings, bootstrap already adds some stuff by default
+// remove unnecessary styling
+a {
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+	}
+	&:active {
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+
+	// box link
+	&.box-link, &.box-link-fill {
+		letter-spacing: 1px;
+		color: #fff;
+		border: 2px solid #fff;
+		display: table;
+		padding: 6px 50px 6px 50px;
+		border-radius: 3px;
+		text-align: center;
+		.opacity(0.9);
+		.transition(opacity 0.3s);
+		font-size: 0.922em;
+
+		// when hover
+		&:hover {
+			.opacity(1);
+		}
+	}
+
+	// box link fill
+	&.box-link-fill {
+		background: @brand-yellow-color;
+		border-color: @brand-yellow-color;
+	}
+}
+
+// general styling for input
+input {
+	font-family: @font-family-base;
+}
+
+// heading styling
+h1, h2, h3 {
+	font-family: @fomt-family-heading;
+}
+
+// body
+body {
+
+	// font smoothing
+	-moz-osx-font-smoothing : grayscale;
+	-webkit-font-smoothing: grayscale;
+	
+	// some stuff for push menu
+	overflow-x: hidden; 
+	
+	// set the padding to be the same as gutter
+	// to make it more spacious, otherwise is too narrow on mobile
+	// the default is gutter width/2
+	.container { 
+		padding-left: @grid-gutter-width; 
+		padding-right: @grid-gutter-width; 
+	}
+	
+	// wrapper
+	// do not style 'id (#)' in CSS
+	.wrapper {
+
+		// for bottom footer
+		// only on homepage
+		&.home-pg {
+			margin-bottom: 510px;
+			z-index: 2;
+			background: #fff;
+		}
+		
+		// section heading
+		.section-heading {
+			margin: 0px;
+			font-size: 2.5em;
+			text-transform: uppercase;
+		}
+
+		// section info
+		.section-info {
+			color: @gray-light;
+			margin-top:3px;
+		}
+
+		// header
+		header {
+			.clearfix;
+			width: 100%;
+			position: fixed;
+			z-index: 10;
+			.fixChromeFixed();
+
+			// logo
+			.logo {
+
+				// anchor
+				a {
+					background: url(@sprite-path);
+					width: 47px;
+					height: 116px;
+					display: block;
+				}
+			}
+
+			// logo stuck
+			.logo-stuck {
+				margin-top:13px;
+				display: none;
+				
+				// icon
+				a {
+					width: 106px;
+					height: 33px;
+					background: url(@sprite-path) -359px 0;
+					display: block;
+				}
+			}
+
+			// menu
+			.menu {
+				margin-top:60px; // 68 on bigger devices
+
+				// anchor
+				a {
+					color: #fff;
+					font-size: 1.5em; // 1.077 on bigger devices
+					letter-spacing: 1px;
+
+					&:hover, &.active {
+						text-decoration: none;
+					}
+				}
+			}
+
+			// stuck
+			&.stuck {
+				background: rgba(255,255,255,0.9);
+				height: 60px;
+
+				// logo
+				.logo-stuck {
+					display: block;
+				}
+
+				// logo
+				.logo {
+					display: none;
+				}
+
+				// menu
+				.menu {
+					margin-top:12px;
+
+					// a
+					a {
+						color: darken(#d89450, 6%);
+					}
+				}
+			}
+		}
+
+		// homescreen splash
+		.splash {
+			background: url('../img/content/bg-home-3.jpg') no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			width: 100%;
+			min-height: 742px;
+			height: 792px;
+
+
+			// hue
+			.hue {
+				width: 100%;
+				height: 100%;
+				color: #fff;
+				background: rgba(255,127,0,0.6);
+				background-image: url("../img/ui/bg-network-2.png");
+				background-repeat: repeat-x;
+				background-position: bottom;
+				padding-top:150px;
+
+				// static nav
+				// shown when header is out or viewing window
+				.static-nav {
+					height: 60px;
+					background: rgba(255,255,255,0.9);
+					position: fixed;
+					top:-60px;
+					width: 100%;
+					z-index: 10;
+					right:0;
+					.transition(right 0.3s ease);
+					.fixChromeFixed();
+
+					// logo
+					.logo {
+						margin-top:13px;
+						
+						// icon
+						a {
+							width: 106px;
+							height: 33px;
+							background: url(@sprite-path) -359px 0;
+							display: block;
+						}
+					}
+
+					// menu
+					.menu {
+						display: block;
+						margin-top:12px; // 17 on bigger devices
+						
+						// icon
+						a {
+							font-size: 1.5em; // 1.077em on bigger devices
+							color: #d89450;
+							letter-spacing: 1px;
+						}
+					}
+				}
+
+				
+
+				// intro
+				.intro {
+					margin-top:45px;
+
+					// logo-text
+					.logo-text {
+						width: 305px;
+						height: 94px;
+						background: url(@sprite-path) -47px 0;
+						display: block;
+					}
+
+					// logo-text
+					.slogan-text {
+						width: 305px;
+						height: 19px;
+						background: url(@sprite-path) -47px -94px;
+						display: block;
+					}
+
+					// text
+					p {
+						margin-top:20px;
+						width: 100%;
+						font-size: 1.077em;
+					}
+
+					// ul
+					ul {
+						margin-top:15px;
+						li {
+							width: 100%;
+
+							a {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+
+			// child page splash
+			&.child-page {
+				height: 300px;
+
+				// remove network image
+				.hue {
+					background: none;
+				}
+			}
+		}
+
+		// highlight head
+		.highlight-head {
+			text-align: center;
+			margin-top:56px;
+		}
+
+		// values
+		.values {
+
+			// item
+			.value {
+				height: 200px;
+				background-size: cover;
+				padding:0px;
+				position: relative;
+
+				// collaboration
+				&.collaboration {
+					background-image: url("../img/content/bg-value.jpg");
+				}
+
+				// work
+				&.work-place {
+					background-image: url("../img/content/bg-value.jpg");
+				}
+
+				// software
+				&.software {
+					background-image: url("../img/content/bg-value-2.jpg");
+				}
+
+				// events
+				&.events {
+					background-image: url("../img/content/bg-value-2.jpg");
+				}
+
+				// hue
+				.hue {
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.4);
+					.transition(background 0.3s);
+
+					// text
+					h2 {
+						margin-top:0px;
+						letter-spacing: 1px;
+						position: absolute;
+						top:27px;
+						left: 30px;
+						right: 20px;
+						z-index: 3;
+						color: #fff;
+					}	
+
+					// image wrap
+					.wrap {
+						position: absolute;
+						right: 50px;
+						left: 50px;
+						top:120px;
+						z-index: 3;
+						display: none;
+
+						// icon
+						.icon {
+							width: 100%;
+						}
+					}
+
+					// more info link
+					a.more-info {
+						color: #fff;
+						margin-top:15px;
+						font-size: 0.922em;
+						letter-spacing: 1px;
+						position: absolute;
+						bottom: 30px;
+						left: 30px;
+						margin-left: 0;
+						border: 2px solid #fff;
+						width: 140px;
+						text-align: center;
+						padding: 3px 0px 3px 0px;
+						border-radius: 3px;
+						z-index: 3;
+						.opacity(0.7);
+					}
+					
+					// highlight
+					.highlight {
+						display: block;
+						width: 100%;
+						height: 100%;
+						.yellow-gradient();
+						.opacity(0);
+						.transition(opacity 0.3s);
+					}
+		
+					// hover
+					&:hover {
+						background: rgba(0,0,0,0.6);
+					}
+				}
+			}
+		}
+
+		// highlight
+		.highlight {
+			.clearfix;
+			padding-top:60px;
+			padding-bottom: 60px;
+
+			// columns
+			[class*='col-'] {
+
+				// padding
+				padding-left: 30px;
+				padding-right: 30px;
+
+				// first child
+				&:first-child {
+					padding-right: 50px;
+					padding-left: 10px;	
+				}
+
+				// last child
+				&:last-child {
+					padding-left: 50px;
+					padding-right: 10px;	
+				}
+				
+				// head
+				h2 {
+					font-size: 2.5em;
+					line-height: 1.3em;
+					margin-top:0px;
+				}
+				p {
+					font-size: 1.2em;
+					color: @gray-light;
+					margin-top:20px;
+				}
+				.more-info {
+					color: @brand-yellow-color;
+					font-size: 1.2em;
+					margin-top:20px;
+					display: block;
+				}
+			}
+		}
+
+		// upcoming events
+		.upcoming-events {
+			background: #f2f2f2;
+			width: 100%;
+			height: 500px;
+			background-image: url('../img/content/bg-events.jpg');
+			background-position: right top;
+			background-repeat: no-repeat;
+
+			// wrap
+			.wrap {
+				width: 60%;
+				padding: 100px 0 0 0;
+
+				// title
+				.title {
+					color: @brand-yellow-color;
+					letter-spacing: 1px;
+				}
+				h1 {
+					margin-top:15px;
+				}
+				p {
+					font-size: 1.2em;
+					color: @gray-light;
+					margin-top:20px;
+				}
+				.more-info {
+					color: @brand-yellow-color;
+					font-size: 1.3em;
+					margin-top:20px;
+					display: block;
+				}
+				.event-info {
+					margin-top:20px;
+					li {
+						color: @gray-light;
+						letter-spacing: 1px;
+						font-size: 0.877em;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		// workshop & events
+		.workshop-events {
+			text-align: center;
+			padding-top: 50px;
+			padding-bottom: 30px;
+
+			// item
+			.row {
+				margin-top:47px;
+
+				// event
+				.event {
+					margin-bottom: 20px;
+					
+					// inner
+					.inner {
+						height: 200px;
+						background-size: cover;
+						border-bottom: 5px solid @brand-yellow-color;
+
+						// nav
+						a {
+							width: 100%;
+							height: 100%;
+							display: block;
+							background: rgba(0,0,0,0.1);
+							.transition(background 0.3s ease);
+
+							// header
+							h2 {
+								color: #fff;
+								margin:0px;
+								padding:76px 20px 0px 20px;
+								font-size: 1.923em;
+							}
+
+							// time
+							.timestamp {
+								color: #fff;
+							}
+
+							// show yellow gradient on hover
+							// note: gradient doesn't work yet for CSS3 Transitions, hopefully it will be implemented soon
+							&:hover {
+								.yellow-gradient();
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		// news & articles section
+		.articles-news {
+			padding-bottom: 30px;
+			margin-top:60px;
+			
+			// articles on the left
+			.articles {
+				
+				// news
+				.news-list {
+					margin-top:45px;
+					
+					// item
+					.item {
+						margin-bottom: 20px;
+						
+						// thumb
+						.thumb {
+							
+							// inner
+							.inner {
+
+								// nav
+								a {
+									position: relative;
+									display: block;
+
+									// date
+									.date {
+										display: content;
+										background: rgba(255,127,0,0.7);
+										color: #fff;
+										padding: 5px 10px 4px 10px;
+										z-index: 3;
+										font-size: 0.89em;
+										letter-spacing: 1px;
+										position: absolute;
+										top:20px;
+										left: 0px;
+									}
+
+									// responsive image
+									img {
+										width: 100%;
+									}
+								}
+							}
+						}
+						
+						// content
+						.content {
+							
+							// link
+							a {
+
+								// texts
+								h3 {
+									margin:20px 0 0 0;
+									color: #333;
+									.transition(color 0.3s ease);
+								}
+								.author {
+									color: @brand-yellow-color;
+									display: block;
+									margin-top:3px;
+								}
+								p {
+									color: @gray-light;
+									margin-top:7px;
+									.transition(color 0.3s);
+								}
+
+								// on hover, change colors for heading & text
+								&:hover {
+									h3 {
+										color: @brand-yellow-color;
+									}
+									p {
+										color: #333;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// news on the right / twitter
+			.news {
+
+				// twitter list
+				.twitter-list {
+					margin-top:30px;
+					position: relative;
+
+					// liney
+					// this is the decorating line to simulate timeline
+					// only shown on landscape tablet and desktop
+					// adjust the left positioning on responsive.hs.less
+					.liney {
+						display: block;
+						width:1px;
+						height: 90%;
+						background: #d4d5d7;
+						position: absolute;
+						z-index: -1px;
+						left: 30px;
+						top:0px;
+					}
+
+					// tweet
+					.tweet {
+						margin-bottom: 15px;
+
+						// profile
+						.profile {
+							text-align: center;
+
+							// thumbnails
+							// it needs some wrapping to hide the liney
+							.thumb {
+								border-bottom: 10px solid #fff;
+								border-top: 10px solid #fff;
+
+								// avatar
+								.avatar {
+									width: 60px;
+									height: 60px;
+									border-radius: 30px;
+									background: #333;
+									margin: 0 auto;
+									display: block;
+								}
+							}
+
+							// time stamp
+							// border acts as a method to hide the liney 
+							.time-wrap {
+								border-bottom: 10px solid #fff;
+
+								// time
+								.timestamp {
+									border-radius: 3px;
+									border:2px solid #d4d5d7;
+									padding: 1px 10px 1px 10px;
+									display: table;
+									color: #909090;
+									font-size: 0.846em;
+									margin: 0 auto;
+									background: #fff;
+								}
+							}
+						}
+
+						// content
+						.content {
+
+							// h3
+							h3 {
+								font-family: @font-family-base;
+								font-size: 1.154em;
+								margin:10px 0 0 0;
+								font-weight: normal;
+							}
+
+							// handler
+							.handler {
+								a {
+									color: @brand-yellow-color;
+								}
+							}
+
+							// text
+							.text {
+								margin-top:10px;
+								color: @gray-light;
+								.transition(color 0.3s);
+							}
+
+							// expand
+							a.expand {
+								color: #909090;
+								margin-top:10px;
+								display: block;
+								font-size: 0.923em;
+								padding-bottom: 24px;
+								border-bottom: 1px solid #f4f4f4;
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+	
+	// footer wrap on homepage
+	// always at the bottom and hidden by wrapper
+	.footer-wrap {
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		right: 0;
+		overflow: auto;
+		width: 100%;
+		.transition(right 0.3s ease);
+		
+		// footer & maps
+		.footer-maps {
+			
+			
+			// maps
+			.maps {
+				height: 400px;
+				width: 100%;
+			}
+
+			// this class is ingested by JS to style
+			// info window on google maps embed
+			.gw-style-box {
+
+				// create triangle that points to left
+				&:after {
+					right: 99%; top: 50%; 
+					border: solid transparent; content: " "; 
+					height: 0; width: 0; position: absolute; 
+					pointer-events: none; border-color: rgba(255, 255, 255, 0); 
+					border-right-color: #fff; border-width: 16px; margin-top: -16px; 
+				}
+			}
+
+			// terms of content
+			.gmnoprint, .gm-style-cc {
+				display: none;
+			}
+
+			// info window styling
+			// HTML is defined in index.html, avoid declaration is JS (dirty!)
+			.info-window {
+				width: 300px;
+				height: 145px;
+				padding-left: 10px;
+
+				// small
+				small {
+					font-size: 0.846em;
+					color: @gray-light;
+				}
+
+				// head
+				h2 {
+					margin-top:0;
+					margin-bottom: 0px;
+				}
+
+				// link
+				a {
+					color: inherit;
+					.opacity(0.7);
+					.transition(opacity 0.3s);
+
+					// on hover
+					&:hover {
+						.opacity(1);
+					}
+				}
+			}
+		}
+
+		// footer
+		// yellow strips at the bottom of the map
+		.homepage-footer {
+			color: #fff;
+			background: rgb(243,166,90); /* Old browsers */
+			background: -moz-linear-gradient(left,  rgba(243,166,90,1) 0%, rgba(243,166,90,1) 41%, rgba(216,148,80,1) 79%, rgba(216,148,80,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(243,166,90,1)), color-stop(41%,rgba(243,166,90,1)), color-stop(79%,rgba(216,148,80,1)), color-stop(100%,rgba(216,148,80,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  rgba(243,166,90,1) 0%,rgba(243,166,90,1) 41%,rgba(216,148,80,1) 79%,rgba(216,148,80,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  rgba(243,166,90,1) 0%,rgba(243,166,90,1) 41%,rgba(216,148,80,1) 79%,rgba(216,148,80,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  rgba(243,166,90,1) 0%,rgba(243,166,90,1) 41%,rgba(216,148,80,1) 79%,rgba(216,148,80,1) 100%); /* IE10+ */
+			background: linear-gradient(to right,  rgba(243,166,90,1) 0%,rgba(243,166,90,1) 41%,rgba(216,148,80,1) 79%,rgba(216,148,80,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3a65a', endColorstr='#d89450',GradientType=1 ); /* IE6-9 */
+			
+			// left
+			.left {
+				background: #f3a65a;
+				height: 110px;
+				text-align: left;
+
+				// list
+				ul {
+					margin:45px 0 0 0;
+					li {
+						margin: 0 30px 0 0;
+					}
+				}
+			}
+
+			// right
+			.right {
+				background: #d89450;
+				height: 110px;
+				text-align: left;
+				padding: 0 0 0 50px;
+				
+				// logo
+				a {
+					font-size: 1.3em;
+					display: inline-block;
+					margin: 34px 8px 0 0;
+					.opacity(0.85);
+					.transition(opacity 0.3s);
+
+					// font
+					.fa {
+						color: #d89450;
+
+						// circle
+						&.fa-circle {
+							color: #fff;
+						}
+
+						// envelope
+						&.fa-paper-plane {
+							font-size: 0.75em;
+						}
+					}
+
+					// hover
+					&:hover {
+						.opacity(1);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Import responsive style
+@import "responsive.hs.less";

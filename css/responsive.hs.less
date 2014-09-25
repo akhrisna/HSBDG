@@ -1,0 +1,348 @@
+// ===== Responsive Styles ===========================================================================
+// Author: Akbar Khrisna (Pinest Design - http://twitter.com/pinestdesign - pinestdesign@gmail.com)
+// 13 September 2014
+// Info: All adaptive styling, all style starts from mobile style and gradually expand to bigger screens
+// ================================================================================================
+
+/* Extra small devices (mobiles, 480px and up) */
+@media (min-width: @screen-xs-min) {
+	
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+
+	// body
+	body {
+		
+		// set the container padding to be default
+		// we make it bigger on mobile (Gutter is 20px)
+		.container { padding-left: floor((@grid-gutter-width / 2)); padding-right:floor((@grid-gutter-width / 2)); }
+		
+		// wrapper
+		.wrapper {
+
+			// splash
+			// set the splash height to be smaller on tablet & desktop
+			.splash {
+				//height: 742px;
+				
+				// hue
+				.hue {
+
+					// intro
+					.intro {
+						margin-top:30px;
+
+						// link
+						ul {
+							margin-top: 23px;
+							
+							// listing
+							li {
+								width: auto;
+								a {
+									width: 220px;
+								}
+							}
+						}
+					}
+				}
+
+				// child page
+				&.child-page {
+					height: 300px;
+				}
+			}
+
+			// values
+			.values {
+
+				// item
+				.value {
+					height: 320px;
+
+					// hue
+					.hue {
+
+						// text
+						h2 {
+							font-size: 1.786em;
+						}
+						a.more-info {
+							width: auto;
+							left: 30px;
+							right: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Medium devices (tablet landscape, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+	// body
+	body {
+
+		// wrapper
+		.wrapper {
+
+			// splash
+			.splash {
+
+				// hue
+				.hue {
+
+					// adjust the intro margin
+					.intro {
+						margin-top:75px;
+
+						// text
+						p {
+							width: 90%;
+						}
+					}
+				}
+			}
+			
+			// news
+			.articles-news {
+				
+				// articles
+				.articles {
+					
+					// news
+					.news-list {
+						
+						// item
+						.item {
+							
+							// content
+							.content {
+								
+								// link
+								a {
+									// header
+									h3 {
+										margin:0px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				// news
+				.news {
+
+					// twitter
+					.twitter-list {
+
+						// tweet
+						.tweet {
+							margin-bottom: 21px;
+							
+							// content
+							.content {
+
+								// expand
+								a.expand {
+									border-bottom: 0px;
+									padding-bottom: 0px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Medium devices (desktops, 1025px and up) - Custom styling */
+@media (min-width: 1025px) {
+
+	// body
+	body {
+
+		// wrapper
+		.wrapper {
+			
+			// header
+			header {
+				
+				// stuck
+				&.stuck {
+
+					// menu
+					.menu {
+						margin-top:17px;
+						
+						// nav
+						a {
+							font-size: 1.077em;
+						}
+					}
+				}
+
+				// menu
+				.menu {
+
+					// nav
+					a {
+						font-size: 1.077em;
+					}
+				}
+			}
+
+			// values
+			.values {
+
+				// item
+				.value {
+					height: 400px;
+
+					// hue
+					.hue {
+						
+						// text
+						h2 {
+							font-size: 2em;
+							bottom: 30px;
+							top: auto;
+						}
+
+						// more link
+						a.more-info {
+							width: 160px;
+							left: 50%;
+							margin-left: -80px;
+							.opacity(0);
+							.transition(opacity 0.3s ease);
+						}
+
+						// wrap
+						.wrap {
+							display: block;
+							top:150px;
+							.opacity(0);
+							.transition(opacity 0.3s ease);
+							right: 25%;
+							left: 25%;
+						}
+
+						// hover
+						&:hover {
+
+							// text
+							h2 {
+								top:30px;
+								bottom: auto;
+								//bottom: 325px;
+							}
+
+							// more link
+							a.more-info {
+								.opacity(0.7);
+							}
+
+							// wrap
+							.wrap {
+								.opacity(1);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		// menu on the right
+		// make it smaller on desktop
+		.cbp-spmenu-vertical {
+			
+			// item
+			.item {
+				
+				// li
+				li {
+					margin-bottom: 7px;
+					
+					//
+					a {
+						font-size: 1.077em;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+
+	// body
+	body {
+
+		// wrapper
+		.wrapper {
+
+			// splash
+			.splash {
+
+				// hue
+				.hue {
+
+					// intro
+					.intro {
+
+						// text
+						p {
+							width: 80%;
+						}
+					}
+				}
+			}
+			
+			// values
+			.values {
+
+				// item
+				.value {
+					
+					// hue
+					.hue {
+
+						// hover
+						&:hover {
+
+							// text
+							h2 {
+								bottom: 330px;
+							}
+						}
+					}
+				}
+			}
+
+			// articles
+			.articles-news {
+
+				// news
+				.news {
+
+					// twitter list
+					.twitter-list {
+
+						// adjust liney to be in the middle of timestamp & user avatar
+						.liney {
+							left: 38px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
