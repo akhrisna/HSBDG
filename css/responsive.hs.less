@@ -25,14 +25,13 @@
 			// splash
 			// set the splash height to be smaller on tablet & desktop
 			.splash {
-				//height: 742px;
 				
 				// hue
 				.hue {
 
 					// intro
 					.intro {
-						margin-top:30px;
+						margin-top:50px;
 
 						// link
 						ul {
@@ -48,31 +47,122 @@
 						}
 					}
 				}
-
-				// child page
-				&.child-page {
-					height: 300px;
+			}
+			
+			// highlight
+			.highlight {
+				padding-bottom: 65px;
+				
+				// container
+				.container {
+					
+					// intro
+					.intro {
+						margin:0 0 50px 0;	
+					}
+					
+					// row 
+					.row {
+						
+						// columns
+						[class*='col-'] {
+			
+							// padding
+							padding-left: 30px;
+							padding-right: 30px;
+			
+							// first child
+							&:first-child {
+								padding-right: 50px;
+								padding-left: 10px;	
+							}
+			
+							// last child
+							&:last-child {
+								padding-left: 50px;
+								padding-right: 10px;	
+							}
+							
+							// more info
+							.more-info {
+								margin-bottom: 0px;
+							}
+						}
+					}
+				}
+			}
+			
+			// events
+			.events {
+				
+				// hue
+				.hue {
+					padding: 65px 0 0px 0;
+					
+					// wrap
+					.wrap {
+						width: 80%;
+					}
+				}
+			}
+			
+			// news
+			.news {
+				padding: 60px 0 60px 0;
+				
+				// container
+				.container {
+					
+					// intro
+					.intro {
+						margin:0 0 50px 0;	
+					}
+					
+					// row 
+					.row {
+						
+						// columns
+						[class*='col-'] {
+			
+							// padding
+							padding-left: 30px;
+							padding-right: 30px;
+			
+							// first child
+							&:first-child {
+								padding-right: 50px;
+								padding-left: 10px;	
+							}
+			
+							// last child
+							&:last-child {
+								padding-left: 50px;
+								padding-right: 10px;	
+							}
+							
+							// link 
+							a {
+								p {
+									margin-bottom: 0px;
+								}
+							}
+						}
+					}
 				}
 			}
 
-			// values
-			.values {
-
-				// item
-				.value {
-					height: 320px;
-
-					// hue
-					.hue {
-
-						// text
-						h2 {
-							font-size: 1.786em;
-						}
-						a.more-info {
-							width: auto;
-							left: 30px;
-							right: 30px;
+			// footer
+			footer {
+				
+				// container
+				.container {
+		
+					// row 
+					.row {
+						
+						// right
+						.right {
+							text-align: right;
 						}
 					}
 				}
@@ -90,72 +180,12 @@
 		// wrapper
 		.wrapper {
 
-			// splash
-			.splash {
-
+			// events
+			.events {
+				
 				// hue
 				.hue {
-
-					// adjust the intro margin
-					.intro {
-						margin-top:75px;
-
-						// text
-						p {
-							width: 90%;
-						}
-					}
-				}
-			}
-			
-			// news
-			.articles-news {
-				
-				// articles
-				.articles {
-					
-					// news
-					.news-list {
-						
-						// item
-						.item {
-							
-							// content
-							.content {
-								
-								// link
-								a {
-									// header
-									h3 {
-										margin:0px;
-									}
-								}
-							}
-						}
-					}
-				}
-
-				// news
-				.news {
-
-					// twitter
-					.twitter-list {
-
-						// tweet
-						.tweet {
-							margin-bottom: 21px;
-							
-							// content
-							.content {
-
-								// expand
-								a.expand {
-									border-bottom: 0px;
-									padding-bottom: 0px;
-								}
-							}
-						}
-					}
+					padding: 80px 0 0px 0;
 				}
 			}
 		}
@@ -197,63 +227,16 @@
 					}
 				}
 			}
+			
+			// splash
+			.splash {
 
-			// values
-			.values {
+				// hue
+				.hue {
 
-				// item
-				.value {
-					height: 400px;
-
-					// hue
-					.hue {
-						
-						// text
-						h2 {
-							font-size: 2em;
-							bottom: 30px;
-							top: auto;
-						}
-
-						// more link
-						a.more-info {
-							width: 160px;
-							left: 50%;
-							margin-left: -80px;
-							.opacity(0);
-							.transition(opacity 0.3s ease);
-						}
-
-						// wrap
-						.wrap {
-							display: block;
-							top:150px;
-							.opacity(0);
-							.transition(opacity 0.3s ease);
-							right: 25%;
-							left: 25%;
-						}
-
-						// hover
-						&:hover {
-
-							// text
-							h2 {
-								top:30px;
-								bottom: auto;
-								//bottom: 325px;
-							}
-
-							// more link
-							a.more-info {
-								.opacity(0.7);
-							}
-
-							// wrap
-							.wrap {
-								.opacity(1);
-							}
-						}
+					// intro
+					.intro {
+						margin-top:70px;
 					}
 				}
 			}
@@ -297,48 +280,10 @@
 
 					// intro
 					.intro {
-
+												
 						// text
 						p {
 							width: 80%;
-						}
-					}
-				}
-			}
-			
-			// values
-			.values {
-
-				// item
-				.value {
-					
-					// hue
-					.hue {
-
-						// hover
-						&:hover {
-
-							// text
-							h2 {
-								bottom: 330px;
-							}
-						}
-					}
-				}
-			}
-
-			// articles
-			.articles-news {
-
-				// news
-				.news {
-
-					// twitter list
-					.twitter-list {
-
-						// adjust liney to be in the middle of timestamp & user avatar
-						.liney {
-							left: 38px;
 						}
 					}
 				}
