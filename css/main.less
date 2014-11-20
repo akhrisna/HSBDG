@@ -665,6 +665,19 @@ body {
 
 		// about us
 		.aboutus {
+			position: relative;
+
+			// video
+			.video {
+				margin-top:50px;
+				display: none;
+
+				// video
+				.closeButton {
+					float: right;
+					margin-top:20px;
+				}
+			}
 
 			// container
 			.container {
@@ -680,7 +693,7 @@ body {
 
 							// fact
 							.fact {
-								
+								border-left: 1px solid #dfdfdf;
 								border-bottom: 1px solid #dfdfdf;
 								border-right: 1px solid #dfdfdf;
 								padding: 40px 40px 50px 40px;
@@ -717,6 +730,7 @@ body {
 						border-left: 1px solid #dfdfdf;
 						border-right: 1px solid #dfdfdf;
 						border-bottom: 1px solid #dfdfdf;
+						.clearfix;
 
 						// top icon
 						.comment-icon {
@@ -759,7 +773,6 @@ body {
 								// gives space to the top
 								.box-link {
 									margin-top: 20px;
-									width: 100%;
 								}
 							}
 						}

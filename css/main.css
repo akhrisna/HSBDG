@@ -6248,7 +6248,19 @@ body .wrapper .members .container .list .person .detail .social li a:active {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
+body .wrapper .aboutus {
+  position: relative;
+}
+body .wrapper .aboutus .video {
+  margin-top: 50px;
+  display: none;
+}
+body .wrapper .aboutus .video .closeButton {
+  float: right;
+  margin-top: 20px;
+}
 body .wrapper .aboutus .container .topintro .facts .row .fact {
+  border-left: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
   border-right: 1px solid #dfdfdf;
   padding: 40px 40px 50px 40px;
@@ -6278,6 +6290,22 @@ body .wrapper .aboutus .container .topintro .abouttext {
   border-right: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
 }
+body .wrapper .aboutus .container .topintro .abouttext:before,
+body .wrapper .aboutus .container .topintro .abouttext:after {
+  content: " ";
+  display: table;
+}
+body .wrapper .aboutus .container .topintro .abouttext:after {
+  clear: both;
+}
+body .wrapper .aboutus .container .topintro .abouttext:before,
+body .wrapper .aboutus .container .topintro .abouttext:after {
+  content: " ";
+  display: table;
+}
+body .wrapper .aboutus .container .topintro .abouttext:after {
+  clear: both;
+}
 body .wrapper .aboutus .container .topintro .abouttext .comment-icon {
   width: 75px;
   height: 75px;
@@ -6306,7 +6334,6 @@ body .wrapper .aboutus .container .topintro .abouttext .row [class*='col-'] p {
 }
 body .wrapper .aboutus .container .topintro .abouttext .row [class*='col-'] .box-link {
   margin-top: 20px;
-  width: 100%;
 }
 body .wrapper .features {
   margin-top: 15px;
