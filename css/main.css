@@ -5811,9 +5811,6 @@ body .wrapper header {
   z-index: 10;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
 }
 body .wrapper header:before,
 body .wrapper header:after {
